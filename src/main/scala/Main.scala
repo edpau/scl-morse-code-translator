@@ -2,7 +2,8 @@ object Main {
   def main(args: Array[String]): Unit = {
     OutputHandler.printWelcome()
 
-    val input = InputHandler.promptUser("Please type what you want to translate: ")
+    OutputHandler.printPrompt("Please type what you want to translate: ")
+    val input = InputHandler.getUserInput()
     println("[Debug] " + "input: " + input)
 
     // TODO: Move input validation to Validation.scala

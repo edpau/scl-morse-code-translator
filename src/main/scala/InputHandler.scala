@@ -1,5 +1,5 @@
 import scala.io.StdIn.readLine
 
 object InputHandler {
-  def promptUser(prompt: String): String = readLine(prompt).trim.toUpperCase
+  def getUserInput(): String = readLine().trim.toUpperCase
 }
