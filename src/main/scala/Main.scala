@@ -2,9 +2,9 @@ object Main {
   def main(args: Array[String]): Unit = {
     OutputHandler.printWelcome()
 
-    OutputHandler.printPrompt("Please type what you want to translate: ")
+    OutputHandler.printPrompt("Enter your message (English → Morse):")
     val input = InputHandler.getUserInput()
-    println("[Debug] " + "input: " + input)
+    println(s"[Debug] input: $input")
 
     // TODO: Move input validation to Validation.scala
     // Includes: check for empty input, unsupported characters and max length
