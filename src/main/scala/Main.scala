@@ -6,26 +6,27 @@ object Main {
 
     var keepTranslating = true
     while (keepTranslating) {
-      handleMenuSelection()
-      keepTranslating = askToContinue()
+      keepTranslating = handleMenuSelection() && askToContinue()
     }
 
   }
 
   @tailrec
-  private def handleMenuSelection(): Unit = {
+  private def handleMenuSelection(): Boolean = {
     OutputHandler.printPrompt(menuText)
 
     InputHandler.getUserInput() match {
       case "1" => {
         handleEncode()
+        true
       }
       case "2" => {
         handleDecode()
+        true
       }
       case "0" => {
         OutputHandler.printPrompt("Goodbye")
-        System.exit(0)
+        false
       }
       case _ => {
         OutputHandler.printError("Invalid input.")
