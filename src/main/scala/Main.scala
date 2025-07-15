@@ -1,3 +1,5 @@
+import translator.{MorseCode, Translator}
+
 import scala.annotation.tailrec
 
 object Main {

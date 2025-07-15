@@ -1,4 +1,6 @@
+package translator
 import org.scalatest.funsuite.AnyFunSuite
+
 
 class TranslatorTest extends AnyFunSuite {
 
@@ -14,11 +16,11 @@ class TranslatorTest extends AnyFunSuite {
     assert(Translator.encode("HI THERE") == ".... .. / - .... . .-. .")
   }
 
-  test("decodes a single word") {
-    assert(Translator.decode(".... . .-.. .-.. ---") == "HELLO")
+  test("decodeMorseWord decodes a single word") {
+    assert(Translator.decodeMorseWord(".... . .-.. .-.. ---") == "HELLO")
   }
-  
-  test("decodes full sentence with /") {
+
+  test("decode decodes full sentence with /") {
     assert(Translator.decode(".... .. / - .... . .-. .") == "HI THERE")
   }
 

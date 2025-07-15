@@ -1,3 +1,5 @@
+package translator
+
 object MorseCode {
   val charToMorse: Map[Char, String] = Map(
     'A' -> ".-", 'B' -> "-...", 'C' -> "-.-.", 'D' -> "-..",

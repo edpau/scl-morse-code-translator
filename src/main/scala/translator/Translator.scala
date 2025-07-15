@@ -1,4 +1,6 @@
-import MorseCode.{decodeMorseLetter, encodeChar}
+package translator
+
+import translator.MorseCode.*
 
 object Translator {
 
@@ -11,6 +13,10 @@ object Translator {
     str.split(" / ").toList
   }
 
+  private[translator] def decodeMorseWord(morseWord: String): String = {
+    morseWord.split(" ").map(decodeMorseLetter).mkString("")
+  }
+
   def encode(input: String): String = {
     splitWordsToList(input)
       .map { word =>
@@ -20,10 +26,7 @@ object Translator {
   }
 
   def decode(morse: String): String = {
-    morseSentenceToWords(morse).map { morseWord =>
-        morseWord.split(" ").map(decodeMorseLetter).mkString("")
-      }
-      .mkString(" ")
+    morseSentenceToWords(morse).map(decodeMorseWord).mkString(" ")
   }
 
 }
