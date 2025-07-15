@@ -1,4 +1,5 @@
 import translator.{MorseCode, Translator}
+import validator.Validation
 
 import scala.annotation.tailrec
 
@@ -42,13 +43,13 @@ object Main {
     val input = InputHandler.getUppercasedInput()
     println(s"[Debug] input: $input")
 
-    // TODO: Move input validation to Validation.scala
-    // Includes: check for empty input, unsupported characters and max length
-    if (!input.forall(MorseCode.charToMorse.contains))
-      throw new IllegalArgumentException("Input contains invalid characters.")
-
-    val encodedText = Translator.encode(input)
-    OutputHandler.printEncoded(encodedText)
+    Validation.validateEncodeInput(input) match
+      case Right(validInput) =>
+        val encodedText = Translator.encode(validInput)
+        OutputHandler.printEncoded(encodedText)
+      case Left(error) =>
+        OutputHandler.printError(error)
+        handleEncode()
   }
 
   private def handleDecode(): Unit = {
