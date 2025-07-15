@@ -9,6 +9,10 @@ object Translator {
     str.split(" ").filterNot(_.isEmpty).toList
   }
 
+  private[translator] def encodeWord(word: String): String = {
+    word.map(encodeChar).mkString(" ")
+  }
+
   private def morseSentenceToWords(str: String): List[String] = {
     str.split(" / ").toList
   }
@@ -18,11 +22,7 @@ object Translator {
   }
 
   def encode(input: String): String = {
-    splitWordsToList(input)
-      .map { word =>
-        word.map(encodeChar).mkString(" ")
-      }
-      .mkString(" / ")
+    splitWordsToList(input).map(encodeWord).mkString(" / ")
   }
 
   def decode(morse: String): String = {

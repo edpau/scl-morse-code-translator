@@ -8,11 +8,11 @@ class TranslatorTest extends AnyFunSuite {
     assert(Translator.encode("E") == ".")
   }
 
-  test("encodes a word") {
-    assert(Translator.encode("HELLO") == ".... . .-.. .-.. ---")
+  test("encodeWord encodes a word") {
+    assert(Translator.encodeWord("HELLO") == ".... . .-.. .-.. ---")
   }
 
-  test("encodes a sentence with spaces") {
+  test("encode encodes a sentence with spaces") {
     assert(Translator.encode("HI THERE") == ".... .. / - .... . .-. .")
   }
 
