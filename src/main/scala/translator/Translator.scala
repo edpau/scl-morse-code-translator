@@ -5,7 +5,7 @@ import translator.MorseCode.*
 object Translator {
 
   // Split sentence into words, ignoring extra spaces
-  private def splitWordsToList(str: String): List[String] = {
+  private def sentenceToWords(str: String): List[String] = {
     str.split(" ").filterNot(_.isEmpty).toList
   }
 
@@ -22,7 +22,7 @@ object Translator {
   }
 
   def encode(input: String): String = {
-    splitWordsToList(input).map(encodeWord).mkString(" / ")
+    sentenceToWords(input).map(encodeWord).mkString(" / ")
   }
 
   def decode(morse: String): String = {
