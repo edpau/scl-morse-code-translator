@@ -42,7 +42,7 @@ object Main {
 
     // TODO: Move input validation to Validation.scala
     // Includes: check for empty input, unsupported characters and max length
-    if (!input.forall(MorseCode.morseMap.contains))
+    if (!input.forall(MorseCode.charToMorse.contains))
       throw new IllegalArgumentException("Input contains invalid characters.")
 
     val encodedText = Translator.encode(input)
