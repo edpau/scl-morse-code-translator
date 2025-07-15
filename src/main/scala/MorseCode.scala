@@ -13,4 +13,6 @@ object MorseCode {
 
   def encodeChar(c: Char): String = charToMorse(c)
 
+  def decodeMorseLetter(morse: String ): Char = morseToChar(morse)
+
 }

@@ -14,4 +14,12 @@ class TranslatorTest extends AnyFunSuite {
     assert(Translator.encode("HI THERE") == ".... .. / - .... . .-. .")
   }
 
+  test("decodes a single word") {
+    assert(Translator.decode(".... . .-.. .-.. ---") == "HELLO")
+  }
+  
+  test("decodes full sentence with /") {
+    assert(Translator.decode(".... .. / - .... . .-. .") == "HI THERE")
+  }
+
 }

@@ -50,7 +50,15 @@ object Main {
   }
 
   private def handleDecode(): Unit = {
-    OutputHandler.printPrompt("Decode coming soon")
+    OutputHandler.printPrompt("Enter your message (Morse → English):")
+    val input = InputHandler.getUserInput()
+    println(s"[Debug] input: $input")
+
+    //TODO input validation
+
+    val decodedText = Translator.decode(input)
+    OutputHandler.printEncoded(decodedText)
+
   }
 
   @tailrec
