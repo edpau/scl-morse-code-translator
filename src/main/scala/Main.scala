@@ -39,7 +39,7 @@ object Main {
 
   private def handleEncode(): Unit = {
     OutputHandler.printPrompt("Enter your message (English → Morse):")
-    val input = InputHandler.getUserInput()
+    val input = InputHandler.getUppercasedInput()
     println(s"[Debug] input: $input")
 
     // TODO: Move input validation to Validation.scala
@@ -66,7 +66,7 @@ object Main {
   @tailrec
   private def askToContinue(): Boolean = {
     OutputHandler.printPrompt("Do you want to translate another message? Y/N")
-    InputHandler.getUserInput() match {
+    InputHandler.getUppercasedInput() match {
       // Input already uppercased in InputHandler
       case "Y" => true
       case "N" =>
