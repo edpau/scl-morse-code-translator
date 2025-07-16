@@ -2,13 +2,13 @@ package io
 
 object OutputHandler {
 
-  def printWelcome(): Unit = println("🤖 Welcome to Morse Code Translator!\n")
+  def printWelcome() = println("🤖 Welcome to Morse Code Translator!\n")
 
-  def printPrompt(prompt: String): Unit = println(prompt)
+  def printPrompt(prompt: String) = println(prompt)
 
-  def printError(errorMessage: String): Unit =
+  def printError(errorMessage: String) =
     println(s"\u001b[31m⚠️ Error: $errorMessage\u001b[0m")
 
-  def printEncoded(encodedText: String): Unit = println(s"Morse Code: $encodedText")
+  def printResult(encodedText: String) = println(s"Morse Code: $encodedText")
 
 }
