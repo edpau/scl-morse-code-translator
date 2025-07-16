@@ -1,6 +1,7 @@
 package translator
 
 object MorseCode {
+  
   val charToMorse: Map[Char, String] = Map(
     'A' -> ".-", 'B' -> "-...", 'C' -> "-.-.", 'D' -> "-..",
     'E' -> ".", 'F' -> "..-.", 'G' -> "--.", 'H' -> "....",
@@ -15,6 +16,6 @@ object MorseCode {
 
   def encodeChar(c: Char): String = charToMorse(c)
 
-  def decodeMorseLetter(morse: String ): Char = morseToChar(morse)
+  def decodeMorseLetter(morse: String): Char = morseToChar(morse)
 
 }
