@@ -1,3 +1,5 @@
+package io
+
 import scala.io.StdIn.readLine
 
 object InputHandler {

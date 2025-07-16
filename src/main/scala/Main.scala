@@ -1,3 +1,4 @@
+import io.{InputHandler, OutputHandler}
 import translator.{MorseCode, Translator}
 import validator.Validation
 

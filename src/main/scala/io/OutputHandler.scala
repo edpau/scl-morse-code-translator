@@ -1,3 +1,5 @@
+package io
+
 object OutputHandler {
 
   def printWelcome(): Unit = println("🤖 Welcome to Morse Code Translator!\n")
