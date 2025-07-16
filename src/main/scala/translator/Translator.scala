@@ -30,21 +30,3 @@ object Translator {
   }
 
 }
-
-// =============================
-// Developer Notes (Pseudo-code)
-// =============================
-//  Goal: Translate English to Morse Code
-//   1. Split sentence into words → .split(" ") → List[String]
-//   2. Filter out empty strings
-//   3. For each word, convert to List[Char]
-//   4. Map each Char to Morse → encodeChar(c)
-//   5. Join letters with " " and words with " / "
-//
-// - Idea:
-//   • Improve with for-comprehension or flatMap
-//   • Use Option or Either to handle missing chars
-//   • Reject input that is empty or too long
-//   • Decide how to handle multiple spaces (normalize or preserve)
-//   • Add .getOrElse("?") fallback for unknown characters
-//   • Extract validation to separate module (Validation.scala)
