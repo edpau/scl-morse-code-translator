@@ -1,7 +1,6 @@
 import io.{InputHandler, OutputHandler}
 import translator.Translator
 import validator.Validation
-
 import scala.annotation.tailrec
 
 object Main {

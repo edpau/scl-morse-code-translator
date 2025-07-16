@@ -62,7 +62,6 @@ class ValidationTest extends AnyFunSuite {
     assert(result == Right(".... .. / - .... . .-. ."))
   }
 
-
 }
 
 
