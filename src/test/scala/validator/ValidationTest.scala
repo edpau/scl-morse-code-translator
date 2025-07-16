@@ -33,6 +33,36 @@ class ValidationTest extends AnyFunSuite {
     assert(result == Right("HI ED"))
   }
 
+  // ─────────────────────────────────────────────
+  // Tests for: validateDecodeInput
+  // ─────────────────────────────────────────────
+
+  test("validateDecodeInput returns Left when input is empty") {
+    val result = Validation.validateDecodeInput("")
+    assert(result.isLeft, "Expected validation to fail for empty input.")
+  }
+
+  test("validateDecodeInput returns Left when input contains unsupported characters") {
+    val result = Validation.validateDecodeInput("HELLO@")
+    assert(result.isLeft, "Expected validation to fail for unsupported character.")
+  }
+
+  test("validateDecodeInput returns Left for single unsupported character") {
+    val result = Validation.validateDecodeInput("@")
+    assert(result.isLeft)
+  }
+
+  test("validateDecodeInput returns Right with original input when input is valid") {
+    val result = Validation.validateDecodeInput(".")
+    assert(result == Right("."))
+  }
+
+  test("validateDecodeInput returns Right when input contains multiple valid words") {
+    val result = Validation.validateDecodeInput(".... .. / - .... . .-. .")
+    assert(result == Right(".... .. / - .... . .-. ."))
+  }
+
+
 }
 
 

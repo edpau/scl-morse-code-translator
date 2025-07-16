@@ -57,11 +57,13 @@ object Main {
     val input = InputHandler.getUserInput()
     println(s"[Debug] input: $input")
 
-    //TODO input validation
-
-    val decodedText = Translator.decode(input)
-    OutputHandler.printEncoded(decodedText)
-
+    Validation.validateDecodeInput(input) match
+      case Right(validInput) =>
+        val decodedText = Translator.decode(validInput)
+        OutputHandler.printEncoded(decodedText)
+      case Left(error) =>
+        OutputHandler.printError(error)
+        handleDecode()
   }
 
   @tailrec

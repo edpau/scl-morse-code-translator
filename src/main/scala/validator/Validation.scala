@@ -12,5 +12,22 @@ object Validation {
     else 
       Right(input)
   }
-  
+
+  def validateDecodeInput(input: String): Either[String, String] = {
+    if (input.isEmpty)
+      return Left("Input is empty.")
+
+    val morseWords = input.split(" / ")
+
+    val allValid = morseWords.forall{ word =>
+      val letters = word.split(" ")
+      letters.forall(MorseCode.morseToChar.contains)
+    }
+
+    if(!allValid)
+     return Left("Input contains unsupported characters.")
+
+    Right(input)
+  }
+
 }
