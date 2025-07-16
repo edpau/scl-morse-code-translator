@@ -1,5 +1,5 @@
 import io.{InputHandler, OutputHandler}
-import translator.{MorseCode, Translator}
+import translator.Translator
 import validator.Validation
 
 import scala.annotation.tailrec
