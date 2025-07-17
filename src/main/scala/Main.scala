@@ -46,7 +46,7 @@ object Main {
     Validation.validateEncodeInput(input) match
       case Right(validInput) =>
         val encodedText = Translator.encode(validInput)
-        OutputHandler.printResult(encodedText)
+        OutputHandler.printEncodeResult(encodedText)
       case Left(error) =>
         OutputHandler.printError(error)
         handleEncode()
@@ -60,7 +60,7 @@ object Main {
     Validation.validateDecodeInput(input) match
       case Right(validInput) =>
         val decodedText = Translator.decode(validInput)
-        OutputHandler.printResult(decodedText)
+        OutputHandler.printDecodeResult(decodedText)
       case Left(error) =>
         OutputHandler.printError(error)
         handleDecode()

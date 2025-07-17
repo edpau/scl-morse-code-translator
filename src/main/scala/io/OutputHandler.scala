@@ -9,6 +9,10 @@ object OutputHandler {
   def printError(errorMessage: String) =
     println(s"\u001b[31m⚠️ Error: $errorMessage\u001b[0m")
 
-  def printResult(encodedText: String) = println(s"Morse Code: $encodedText")
+  def printEncodeResult(morse: String) =
+    println(s"\u001b[92mMorse Code: $morse\u001b[0m")
+
+  def printDecodeResult(english: String) =
+    println(s"\u001b[94mEnglish: $english\u001b[0m")
 
 }
