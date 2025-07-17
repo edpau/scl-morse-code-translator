@@ -137,4 +137,5 @@ Why?
 - [v0.2.0 – Add Interactive Menu (Encoding + Decode Stub)](release_notes/v0.2.0.md)
 - v0.2.1 – Add basic unit tests for encoding logic
 - [v0.2.2 – Add Decoding Logic + Translator Package](release_notes/v0.2.2.md)
+- [v0.3.0 – MVP Complete](release_notes/v0.3.0.md)
 ---
